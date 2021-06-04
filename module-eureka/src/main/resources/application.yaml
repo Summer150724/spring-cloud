@@ -1,0 +1,17 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: module-eureka
+
+eureka:
+  instance:
+    #eureka服务端的实例名(对应host)
+    hostname: eureka1.com
+  client:
+    register-with-eureka: true #自己不注册自己
+    fetch-registry: true #自己就是注册中心,不需要去检索服务
+    service-url:
+      # 第一次启动报错原因是在{defaultZone}
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka, http://eureka2.com:8002/eureka
