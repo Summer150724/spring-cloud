@@ -7,6 +7,8 @@ package com.example.coomon.utils; /**
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author xia.feng@hand-china.com
@@ -17,5 +19,11 @@ import java.text.SimpleDateFormat;
 public class CommonUtil {
 
     public static final DateFormat dateFormat = SimpleDateFormat.getInstance();
+
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList();
+        list.add(null);
+        int i = list.get(0);
+    }
 
 }

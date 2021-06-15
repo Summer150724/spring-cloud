@@ -1,0 +1,19 @@
+server:
+  port: 8003
+
+
+eureka:
+  instance:
+    instance-id: hystrix
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:8000/eureka
+
+
+spring:
+  application:
+    name: cloud-module-hystrix
+# 开启hystrix支持,不然feignFallback不会生效
+feign:
+  hystrix:
+    enabled: true

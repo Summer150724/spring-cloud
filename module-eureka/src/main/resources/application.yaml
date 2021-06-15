@@ -14,4 +14,12 @@ eureka:
     fetch-registry: true #自己就是注册中心,不需要去检索服务
     service-url:
       # 第一次启动报错原因是在{defaultZone}
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka, http://eureka2.com:8002/eureka
+      # 集群指向其他eureka
+      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka, http://eureka2.com:8002/eureka
+      # OP就指向自己
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+  server:
+    # 关闭自我保护机制,保证及时踢出
+    enable-self-preservation: false
+    # 驱逐时间间隔
+    eviction-interval-timer-in-ms: 2000
