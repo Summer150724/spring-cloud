@@ -1,0 +1,19 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: cloud-module-stream
+  cloud:
+    stream:
+      binders: ## 在此处配置要绑定的消息中间件信息
+        defaultRabbit: # 表示定义的名称,用于binding整合
+          type: rabbit # 消息组件类型
+          environment: # 设置消息组件的环境配置
+            spring:
+              rabbitmq:
+                host:
+                port:
+                username:
+                password:
+      bindings: # 服务的整合处理
+        out

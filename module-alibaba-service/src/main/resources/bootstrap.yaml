@@ -1,0 +1,16 @@
+## 为了跟SpringConfig无缝衔接,也是沿用了Bootstrap
+server:
+  port: 8850
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: cloud-alibaba-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
